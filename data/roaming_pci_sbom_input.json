@@ -1,0 +1,177 @@
+{
+  "settlement_period": "2026-10",
+  "home_operator_hpmn": {
+    "tadig_code": "ESPMC",
+    "legal_name": "Carrier Core Global Telecom S.A.",
+    "settlement_currency": "EUR",
+    "imf_sdr_to_eur_rate": "1.224500",
+    "dispute_threshold_pct": "1.00"
+  },
+  "roaming_wholesale_settlement_fin02": {
+    "tap3_records_received": [
+      {
+        "tap_file_id": "CDESPMCUSAVZ00192",
+        "vpmn_tadig": "USAVZ",
+        "vpmn_name": "Verizon Wireless USA",
+        "country": "US",
+        "cdi_withholding_tax_rate_pct": "0.00",
+        "w8ben_or_tax_residency_valid": true,
+        "call_event_details": [
+          {
+            "cdr_id": "TAP-US-9001",
+            "imsi_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "service_type": "VoLTE_MO",
+            "vpmn_billed_seconds": 1800,
+            "hpmn_sepp_sbc_measured_seconds": 1800,
+            "iot_rate_sdr_per_min": "0.015000",
+            "vpmn_claimed_sdr": "0.450000"
+          },
+          {
+            "cdr_id": "TAP-US-9002",
+            "imsi_hash": "8f434346648f6b96df89dda901c5176b10a6d83961dd3c1ac88b59b2dc327aa4",
+            "service_type": "5G_DATA_MB",
+            "vpmn_billed_megabytes": 51200,
+            "hpmn_sepp_sbc_measured_megabytes": 51180,
+            "iot_rate_sdr_per_mb": "0.000450",
+            "vpmn_claimed_sdr": "23.040000"
+          }
+        ]
+      },
+      {
+        "tap_file_id": "CDESPMCCOLMV00084",
+        "vpmn_tadig": "COLMV",
+        "vpmn_name": "Operador Movil Andino S.A.",
+        "country": "CO",
+        "cdi_withholding_tax_rate_pct": "0.00",
+        "w8ben_or_tax_residency_valid": true,
+        "call_event_details": [
+          {
+            "cdr_id": "TAP-CO-4010",
+            "imsi_hash": "2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae",
+            "service_type": "5G_DATA_MB",
+            "vpmn_billed_megabytes": 20000,
+            "hpmn_sepp_sbc_measured_megabytes": 18200,
+            "iot_rate_sdr_per_mb": "0.000600",
+            "vpmn_claimed_sdr": "12.000000"
+          }
+        ]
+      }
+    ],
+    "bce_bilateral_deals": [
+      {
+        "bce_settlement_id": "BCE-202610-ESPMC-MEXLT",
+        "partner_tadig": "MEXLT",
+        "partner_name": "Red Mayorista Mexico S.A. de C.V.",
+        "country": "MX",
+        "cdi_withholding_tax_rate_pct": "0.00",
+        "committed_monthly_floor_sdr": "15000.00",
+        "outbound_traffic": {
+          "voice_minutes": 420000,
+          "rate_sdr_per_min": "0.008000",
+          "data_gigabytes": 18500,
+          "rate_sdr_per_gb": "0.650000",
+          "nb_iot_active_sims": 45000,
+          "rate_sdr_per_sim": "0.050000"
+        },
+        "inbound_traffic_offset": {
+          "total_inbound_receivable_sdr": "11200.00"
+        }
+      }
+    ]
+  },
+  "pci_dss_v4_gateway_audit_fin02": {
+    "aoc_certificate_id": "PCI-DSS-V4.0-L1-AOC-2026-99812",
+    "tokenization_provider": "Hardware Vault Tokenization Engine (FIPS 140-3 L3)",
+    "sampled_payment_logs": [
+      {
+        "tx_id": "PAY-REC-88001",
+        "timestamp": "2026-10-30T10:11:22Z",
+        "card_token": "TKN_9981726354819283_VISA",
+        "masked_pan": "453201******7895",
+        "raw_payload_inspection": "AUTH_OK|TOKEN=TKN_9981726354819283_VISA|AMT=25.00|CURR=EUR"
+      },
+      {
+        "tx_id": "PAY-REC-88002",
+        "timestamp": "2026-10-30T10:14:05Z",
+        "card_token": "TKN_7741239081726354_MC",
+        "masked_pan": "541275******1029",
+        "raw_payload_inspection": "AUTH_OK|TOKEN=TKN_7741239081726354_MC|AMT=50.00|CURR=EUR"
+      }
+    ]
+  },
+  "sbom_and_frand_sep_audit_fin03": {
+    "spdx_sbom_document": {
+      "spdxVersion": "SPDX-2.3",
+      "dataLicense": "CC0-1.0",
+      "SPDXID": "SPDXRef-DOCUMENT",
+      "name": "telco-core-5g-ims-sba-release-2026.10",
+      "packages": [
+        {
+          "SPDXID": "SPDXRef-Pkg-DPDK",
+          "name": "dpdk-userplane-fastpath",
+          "versionInfo": "24.11.1",
+          "licenseDeclared": "BSD-3-Clause",
+          "usageContext": "LINKED_INTO_PROPRIETARY_UPF_BINARY",
+          "supplier": "Organization: Linux Foundation / DPDK Project",
+          "checksums": [{"algorithm": "SHA256", "checksumValue": "a1b2c3d4e5f60123456789abcdefa1b2c3d4e5f60123456789abcdef01234567"}]
+        },
+        {
+          "SPDXID": "SPDXRef-Pkg-FRRouting",
+          "name": "frr-routing-daemon",
+          "versionInfo": "10.1",
+          "licenseDeclared": "GPL-2.0-or-later",
+          "usageContext": "STANDALONE_OS_PROCESS_IPC_NETCONF",
+          "supplier": "Organization: FRRouting Project",
+          "checksums": [{"algorithm": "SHA256", "checksumValue": "b2c3d4e5f60123456789abcdefa1b2c3d4e5f60123456789abcdef0123456789"}]
+        },
+        {
+          "SPDXID": "SPDXRef-Pkg-OpenTelemetry",
+          "name": "opentelemetry-collector-contrib",
+          "versionInfo": "0.112.0",
+          "licenseDeclared": "Apache-2.0",
+          "usageContext": "STANDALONE_CONTAINER",
+          "supplier": "Organization: CNCF",
+          "checksums": [{"algorithm": "SHA256", "checksumValue": "c3d4e5f60123456789abcdefa1b2c3d4e5f60123456789abcdef0123456789ab"}]
+        },
+        {
+          "SPDXID": "SPDXRef-Pkg-StrongSwan",
+          "name": "strongswan-ikev2-pqc",
+          "versionInfo": "6.0.0",
+          "licenseDeclared": "GPL-2.0-only",
+          "usageContext": "STANDALONE_OS_PROCESS_IPC_NETCONF",
+          "supplier": "Organization: strongSwan Project",
+          "checksums": [{"algorithm": "SHA256", "checksumValue": "d4e5f60123456789abcdefa1b2c3d4e5f60123456789abcdef0123456789abcd"}]
+        }
+      ]
+    },
+    "frand_sep_patent_portfolios": [
+      {
+        "patent_pool_id": "SEP-POOL-3GPP-EVS-AMRWB",
+        "standard_reference": "3GPP TS 26.441 (EVS) & ITU-T G.722.2 (AMR-WB VoLTE/VoNR)",
+        "licensor_entity": "Voice Codec Patent Pool Licensing Administrator",
+        "licensed_channel_cap": 500000,
+        "active_concurrent_channels_peak": 412500,
+        "royalty_rate_eur_per_active_channel": "0.0400",
+        "contract_status": "ACTIVE_FRAND_COMPLIANT"
+      },
+      {
+        "patent_pool_id": "SEP-POOL-ITU-HEVC-H265",
+        "standard_reference": "ITU-T H.265 / ISO/IEC 23008-2 (HEVC IPTV/Video Streaming)",
+        "licensor_entity": "Access Advance / Via LA HEVC Pool",
+        "licensed_channel_cap": 250000,
+        "active_concurrent_channels_peak": 195000,
+        "royalty_rate_eur_per_active_channel": "0.0650",
+        "contract_status": "ACTIVE_FRAND_COMPLIANT"
+      },
+      {
+        "patent_pool_id": "SEP-POOL-ETSI-5G-NR-CORE",
+        "standard_reference": "3GPP Release 17/18 5G NR & Service-Based Architecture",
+        "licensor_entity": "Avanci / Multi-Holder 5G FRAND Bilateral Agreements",
+        "licensed_channel_cap": 1000000,
+        "active_concurrent_channels_peak": 780000,
+        "royalty_rate_eur_per_active_channel": "0.0800",
+        "contract_status": "ACTIVE_FRAND_COMPLIANT"
+      }
+    ]
+  }
+}

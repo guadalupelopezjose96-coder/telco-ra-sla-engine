@@ -1,0 +1,129 @@
+{
+  "certificate_id": "GOV02-GOV03-STIR-SHAKEN-ETSI-LI-CERT",
+  "timestamp_utc": "2026-11-05T21:44:13.454009+00:00",
+  "controls_verified": [
+    "GOV-02",
+    "GOV-03",
+    "SEC-01",
+    "SEC-04"
+  ],
+  "gov03_stir_shaken_rfc8224_results": [
+    {
+      "call_id": "a84b4c76e66710@198.51.100.10",
+      "calling_tn": "+34915550199",
+      "called_tn": "+13055550142",
+      "assigned_attestation": "A",
+      "sip_identity_header": "Identity: eyJhbGciOiJFUzI1NiIsInBwdCI6InNoYWtlbiIsInR5cCI6InBhc3Nwb3J0IiwieDV1IjoiaHR0cHM6Ly9zdGktcGEuY2Fycmllci1jb3JlLmludGVybmFsL2NlcnRzLzY1MDAxLWVzcG1jLWVzMjU2LnBlbSJ9.eyJhdHRlc3QiOiJBIiwiZGVzdCI6eyJ0biI6WyIrMTMwNTU1NTAxNDIiXX0sImlhdCI6MTc5MzkxNTA1Mywib3JpZyI6eyJ0biI6IiszNDkxNTU1MDE5OSJ9LCJvcmlnaWQiOiJmODFkNGZhZS03ZGVjLTExZDAtYTc2NS0wMGEwYzkxZTZiZjYifQ.MEUCIBTc2ikFLGkeKXgiRN2uHSFRBc7tsxwbhBGKAGNrIy47AiEA0_4FLeNFibptV0bqIlCUgtwFE3gLY2vSi_TRZYu7-4M;info=<https://sti-pa.carrier-core.internal/certs/65001-espmc-es256.pem>;alg=ES256;ppt=shaken",
+      "tampering_simulated": false,
+      "sti_vs_verification_result": {
+        "verstat": "TN-Validation-Passed",
+        "valid": true,
+        "attestation_level": "A",
+        "origid": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+        "sbc_action": "ROUTE_CALL_WITH_VERSTAT_PASSED"
+      }
+    },
+    {
+      "call_id": "b99c1d22f11200@203.0.113.55",
+      "calling_tn": "+12025550188",
+      "called_tn": "+34935550100",
+      "assigned_attestation": "C",
+      "sip_identity_header": "Identity: eyJhbGciOiJFUzI1NiIsInBwdCI6InNoYWtlbiIsInR5cCI6InBhc3Nwb3J0IiwieDV1IjoiaHR0cHM6Ly9zdGktcGEuY2Fycmllci1jb3JlLmludGVybmFsL2NlcnRzLzY1MDAxLWVzcG1jLWVzMjU2LnBlbSJ9.eyJhdHRlc3QiOiJDIiwiZGVzdCI6eyJ0biI6WyIrMzQ5MzU1NTAxMDAiXX0sImlhdCI6MTc5MzkxNTA1Mywib3JpZyI6eyJ0biI6IisxMjAyNTU1MDE4OCJ9LCJvcmlnaWQiOiJhMTJiM2M0ZC01ZTZmLTdhOGItOWMwZC0xZTJmM2E0YjVjNmQifQ.MEUCIG45rEmTF6AtmWJu-QgI_1Q0e0G2uUlF3EXxGWIjqCvjAiEAg5BCkdp-cB6_ymwDzVrqe4NoEPQwK_EUUgUwk-mEQqU;info=<https://sti-pa.carrier-core.internal/certs/65001-espmc-es256.pem>;alg=ES256;ppt=shaken",
+      "tampering_simulated": true,
+      "sti_vs_verification_result": {
+        "verstat": "TN-Validation-Failed",
+        "valid": false,
+        "reason": "ORIG_TN_MISMATCH (+12025550188 != +34919999999)",
+        "sbc_action": "BLOCK_403_CLI_SPOOFING"
+      }
+    }
+  ],
+  "gov02_etsi_ts102232_lawful_interception": {
+    "rbac_zero_visibility_audit_log": [
+      {
+        "timestamp_utc": "2026-11-05T21:44:13.453102+00:00",
+        "actor_id": "admin_router_noc_04",
+        "role": "NOC_NETWORK_ENGINEER",
+        "attempted_action": "QUERY_X1_ACTIVE_INTERCEPT_TARGETS",
+        "access_granted": false,
+        "system_response": "DENIED_ZERO_VISIBILITY_OPAQUE_RESPONSE (3GPP TS 33.107 Non-Disclosure)"
+      },
+      {
+        "timestamp_utc": "2026-11-05T21:44:13.453172+00:00",
+        "actor_id": "officer_compliance_lea_01",
+        "role": "LI_WARRANT_OFFICER",
+        "attempted_action": "PROVISION_HI1_WARRANT_TO_ADMF",
+        "access_granted": true,
+        "system_response": "AUTHORIZED_HI1_ADMF_CHANNEL"
+      }
+    ],
+    "hi1_warrant_activations": [
+      {
+        "hi1_notification_type": "ACTIVATION_CONFIRMATION",
+        "warrant_id": "JUD-ES-AN-2026-00891",
+        "liid": "LIID-ES-2026-994120",
+        "x1_1_provisioning_state": "ACTIVE_IN_PROTECTED_SILICON_MEMORY",
+        "cli_snmp_gnmi_visibility": "HIDDEN"
+      }
+    ],
+    "hi2_hi3_encapsulated_ps_pdus": [
+      {
+        "ps_pdu_header": {
+          "etsi_ps_pdu_version": "v3.18.1",
+          "object_identifier_oid": "0.4.0.2.2.5.1.18 (ETSI TS 102 232-1 v3.18.1)",
+          "handover_interface": "HI2 (Intercept Related Information - IRI)",
+          "lawful_interception_id_liid": "LIID-ES-2026-994120",
+          "authorization_country_code": "ES",
+          "communication_identity_number_cin": 8840012,
+          "operator_network_element_id": "MAD-SBC-CORE-01",
+          "sequence_number": 1,
+          "microsecond_timestamp_utc": "2026-11-05T21:44:13.453429Z",
+          "lea_ipsec_tunnel_destination": "198.18.254.100:9443",
+          "payload_sha384_digest": "410b8924af6440288dcde844c00bf6c18c14ed0dc11aed19a80c5c93fd8b2c0a54f2890e6627cd4fae4eca8ce509ab4b",
+          "previous_pdu_chain_hash": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "encapsulated_payload": {
+          "event_source_node": "MAD-SBC-CORE-01",
+          "interface_type": "X2_SIGNALING_IRI",
+          "target_e164": "+34915550199",
+          "communication_identity_number_cin": 8840012,
+          "iri_event_type": "SIP_INVITE_SESSION_ESTABLISHED",
+          "sip_metadata": {
+            "from_uri": "sip:+34915550199@ims.carrier.es",
+            "to_uri": "sip:+13055550142@ims.carrier.us",
+            "source_ip": "2001:db8:1979:ue::4a1",
+            "cell_id_ecgi": "214-01-0049182"
+          }
+        },
+        "forensic_chain_hmac_sha384": "13468740bf2a6a334c98a85e9a84fd6e5b612a5b8d08b57e1f1d81a594f5d3905541b3887d385f2407692720157b6734"
+      },
+      {
+        "ps_pdu_header": {
+          "etsi_ps_pdu_version": "v3.18.1",
+          "object_identifier_oid": "0.4.0.2.2.5.1.18 (ETSI TS 102 232-1 v3.18.1)",
+          "handover_interface": "HI3 (Content of Communication - CC)",
+          "lawful_interception_id_liid": "LIID-ES-2026-994120",
+          "authorization_country_code": "ES",
+          "communication_identity_number_cin": 8840012,
+          "operator_network_element_id": "MAD-UPF-FASTPATH-01",
+          "sequence_number": 2,
+          "microsecond_timestamp_utc": "2026-11-05T21:44:13.453831Z",
+          "lea_ipsec_tunnel_destination": "198.18.254.100:9443",
+          "payload_sha384_digest": "c373399dae1f89195809b3589798f24498f83ab894206a1ba4c9e0e0f1139ab4dae259b17e87c5bbb65f7eef6edb944e",
+          "previous_pdu_chain_hash": "13468740bf2a6a334c98a85e9a84fd6e5b612a5b8d08b57e1f1d81a594f5d3905541b3887d385f2407692720157b6734"
+        },
+        "encapsulated_payload": {
+          "event_source_node": "MAD-UPF-FASTPATH-01",
+          "interface_type": "X3_MEDIA_CC",
+          "target_e164": "+34915550199",
+          "communication_identity_number_cin": 8840012,
+          "rtp_ssrc": "0x7F4A92C1",
+          "codec": "EVS_SWB_24_4_KBPS",
+          "raw_media_payload_hex": "80600001000000a07f4a92c1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8091a2b3c4d"
+        },
+        "forensic_chain_hmac_sha384": "c3ec29a74f52af03579654800a0d367a1ed4a9ceb9737de83dce56f1a12469c9500f303f63d8ce22b98bba2f4c360e0f"
+      }
+    ]
+  },
+  "worm_rfc3161_sha384_seal": "2102b9384c9b0bc88770f40839f3d0ac9465574f73e2cfd2592f3d84ee705b24568e739d512deb86011d13b610fda3d6"
+}

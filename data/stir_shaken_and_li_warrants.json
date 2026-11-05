@@ -1,0 +1,78 @@
+{
+  "sti_ca_configuration": {
+    "service_provider_code_spc": "65001-ESPMC",
+    "cert_uri": "https://sti-pa.carrier-core.internal/certs/65001-espmc-es256.pem",
+    "max_iat_freshness_seconds": 60
+  },
+  "sip_calls_to_process": [
+    {
+      "call_id": "a84b4c76e66710@198.51.100.10",
+      "calling_tn_e164": "+34915550199",
+      "called_tn_e164": "+13055550142",
+      "customer_kyc_verified_on_net": true,
+      "origin_trunk_type": "ON_NET_IMS_VOLTE",
+      "origid": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+      "simulate_tampering_on_transit": false
+    },
+    {
+      "call_id": "b99c1d22f11200@203.0.113.55",
+      "calling_tn_e164": "+12025550188",
+      "called_tn_e164": "+34935550100",
+      "customer_kyc_verified_on_net": false,
+      "origin_trunk_type": "INTERNATIONAL_TDM_IP_GATEWAY",
+      "origid": "a12b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "simulate_tampering_on_transit": true
+    }
+  ],
+  "lawful_interception_hi1_warrants": [
+    {
+      "warrant_id": "JUD-ES-AN-2026-00891",
+      "issuing_authority": "Juzgado Central de Instrucción / LEA SITEL-ETSI",
+      "lea_destination_ipsec_endpoint": "198.18.254.100:9443",
+      "liid": "LIID-ES-2026-994120",
+      "target_identifier_type": "E164_AND_SUPI",
+      "target_e164": "+34915550199",
+      "target_supi": "imsi-214019988776655",
+      "interception_type": "IRI_AND_CC_FULL_HI2_HI3",
+      "valid_from_utc": "2026-10-01T00:00:00Z",
+      "valid_until_utc": "2026-12-31T23:59:59Z",
+      "judicial_ecdsa_signature_verified": true
+    }
+  ],
+  "network_access_audit_attempts": [
+    {
+      "actor_id": "admin_router_noc_04",
+      "role": "NOC_NETWORK_ENGINEER",
+      "attempted_action": "QUERY_X1_ACTIVE_INTERCEPT_TARGETS"
+    },
+    {
+      "actor_id": "officer_compliance_lea_01",
+      "role": "LI_WARRANT_OFFICER",
+      "attempted_action": "PROVISION_HI1_WARRANT_TO_ADMF"
+    }
+  ],
+  "intercepted_network_events_x2_x3": [
+    {
+      "event_source_node": "MAD-SBC-CORE-01",
+      "interface_type": "X2_SIGNALING_IRI",
+      "target_e164": "+34915550199",
+      "communication_identity_number_cin": 8840012,
+      "iri_event_type": "SIP_INVITE_SESSION_ESTABLISHED",
+      "sip_metadata": {
+        "from_uri": "sip:+34915550199@ims.carrier.es",
+        "to_uri": "sip:+13055550142@ims.carrier.us",
+        "source_ip": "2001:db8:1979:ue::4a1",
+        "cell_id_ecgi": "214-01-0049182"
+      }
+    },
+    {
+      "event_source_node": "MAD-UPF-FASTPATH-01",
+      "interface_type": "X3_MEDIA_CC",
+      "target_e164": "+34915550199",
+      "communication_identity_number_cin": 8840012,
+      "rtp_ssrc": "0x7F4A92C1",
+      "codec": "EVS_SWB_24_4_KBPS",
+      "raw_media_payload_hex": "80600001000000a07f4a92c1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8091a2b3c4d"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "report_title": "Certificación Multi-Jurisdiccional de Gobernanza (GOV) y Fiscalidad Telecom (FIN)",
+  "generated_at_utc": "2026-11-05T21:44:12Z",
+  "jurisdictions": {
+    "US": {
+      "jurisdiction": "United States (Federal FCC + State CST)",
+      "regulatory_framework": {
+        "nra": "Federal Communications Commission (FCC) & USAC",
+        "lawful_interception": "CALEA (47 U.S.C. § 1001) / ATIS-1000678 (J-STD-025)",
+        "call_authentication": "TRACED Act - STIR/SHAKEN & Robocall Mitigation Database (RMD)",
+        "incident_reporting_sla": "CIRCIA (72h to CISA) & FCC Data Breach Portal (7 business days)",
+        "accounting_standard": "US GAAP ASC 606 (Variable Consideration) & ASC 842"
+      },
+      "tax_breakdown": {
+        "currency": "USD",
+        "taxable_credit_base": "5000.00",
+        "federal_excise_tax_3pct": "150.00",
+        "state_communications_services_tax_7_44pct": "372.00",
+        "usac_universal_service_fund_34_6pct": "1730.00",
+        "fcc_regulatory_trs_nanpa_fee_0_54pct": "27.00",
+        "total_taxes_and_surcharges_reversed": "2279.00",
+        "total_credit_note_gross": "7279.00"
+      },
+      "compliance_forms": [
+        "FCC Form 499-Q (Quarterly USF True-Up)",
+        "FCC Form 499-A",
+        "IRS Form 720 (FET)",
+        "IRS Form W-8BEN-E (CDI)"
+      ]
+    },
+    "ES": {
+      "jurisdiction": "España (AEAT / CNMC / Unión Europea)",
+      "regulatory_framework": {
+        "nra": "Comisión Nacional de los Mercados y la Competencia (CNMC) & SETSI",
+        "statute": "Ley 11/2022 General de Telecomunicaciones & Real Decreto-ley 7/2022 (Seguridad 5G)",
+        "lawful_interception": "Ley 25/2007 (Retención 12 meses) + Sistema SITEL (ETSI TS 102 232)",
+        "incident_reporting_sla": "Directiva NIS2 / CCN-CERT / INCIBE-CERT (Alerta temprana < 24h, Informe < 72h)",
+        "accounting_standard": "PGC Real Decreto 1/2021 / NIIF-UE 15 (Contraprestación Variable)"
+      },
+      "tax_breakdown": {
+        "currency": "EUR",
+        "taxable_credit_base": "5000.00",
+        "iva_21pct_adjustment": "1050.00",
+        "total_credit_note_gross": "6050.00",
+        "regulatory_levies_reversed": {
+          "tasa_general_operadores_1permil": "5.00",
+          "fondo_nacional_servicio_universal_fnsu": "7.50"
+        }
+      },
+      "aeat_sii_verifactu_artifact": {
+        "invoice_type_code": "R1 (Factura Rectificativa por Art. 80.1 y 80.2 LIVA - SLA)",
+        "invoice_series_number": "R-SLA-20261105-001",
+        "canonical_chain_string": "IDEmisorFactura=B99887766&NumSerieFactura=R-SLA-20261105-001&FechaExpedicionFactura=2026-11-05&TipoFactura=R1&CuotaTotal=-1050.00&ImporteTotal=-6050.00&Huella=A1B2C3D4E5F60718293A4B5C6D7E8F90123456789ABCDEF0123456789ABCDEF0&FechaHoraHusoGenRegistro=2026-11-05T21:44:12Z",
+        "verifactu_sha256_fingerprint": "FDB9B35189DF56CB65AF2C75F7ECCA21613EA5419958837F784AD7C943E99179",
+        "aeat_models": [
+          "SII Libros Registro IVA (<4 días)",
+          "Modelo 303",
+          "Modelo 232 (Operaciones Vinculadas)"
+        ]
+      }
+    },
+    "MX": {
+      "jurisdiction": "México (SAT / LFTR / IFT)",
+      "regulatory_framework": {
+        "nra": "Autoridad Regulatoria de Telecomunicaciones (LFTR / IFT)",
+        "lawful_interception": "Art. 189 y 190 LFTR (Retención 24 meses: 12m en línea + 12m archivo y geolocalización en tiempo real)",
+        "incident_reporting_sla": "Lineamientos de Fallas Masivas (< 2 horas cuando afecte >= 10,000 usuarios por > 30 min)",
+        "accounting_standard": "NIF D-1 (Ingresos por contratos con clientes) y NIF D-5 (Arrendamientos)"
+      },
+      "tax_breakdown": {
+        "currency": "MXN",
+        "taxable_credit_base": "100000.00",
+        "ieps_telecom_3pct_art2_lieps": "3000.00",
+        "iva_taxable_base_with_ieps": "103000.00",
+        "iva_16pct_amount": "16480.00",
+        "effective_combined_indirect_tax_pct": "19.48%",
+        "total_cfdi_egreso_gross": "119480.00"
+      },
+      "sat_cfdi40_artifact": {
+        "uuid_timbre_fiscal": "DF4349E8-0302-49EE-B0FD-498D602AE647",
+        "related_invoice_uuid": "6B29FC40-CA47-1067-B31D-00DD010662DA",
+        "tipo_comprobante": "E (Egreso)",
+        "forma_pago": "17 (Compensación)",
+        "uso_cfdi": "G02 (Devoluciones, descuentos o bonificaciones)",
+        "cadena_original_tfd": "||1.1|DF4349E8-0302-49EE-B0FD-498D602AE647|2026-11-05T12:00:05|SAT970701NN3|SubTotal=100000.00|IEPS=3000.00|IVA=16480.00|Total=119480.00|00001000000504465028||",
+        "sello_digital_sha256": "b649deb24ab3d51c2bdcaef4d916fea7bff35d66c15cc5d0dcf292a9d084573b"
+      }
+    },
+    "CO": {
+      "jurisdiction": "Colombia (DIAN / MinTIC / CRC / ANE)",
+      "regulatory_framework": {
+        "nra": "Ministerio de las TIC (MinTIC), Comisión de Regulación de Comunicaciones (CRC) y ANE",
+        "statute": "Ley 1341 de 2009 modificada por la Ley 1978 de 2019 y Resolución CRC 5050 de 2016",
+        "lawful_interception": "Decreto 1704 de 2012 y Art. 235 CPP (Plataforma ESPERANZA - Fiscalía General de la Nación)",
+        "incident_reporting_sla": "Reporte al ColCERT / CSIRT-TIC y formatos trimestrales de calidad en portal HECAA",
+        "accounting_standard": "NIIF Plenas Grupo 1 (Ley 1314 de 2009 - NIIF 15 y NIIF 16)"
+      },
+      "tax_breakdown": {
+        "currency": "COP",
+        "taxable_credit_base": "20000000.00",
+        "iva_19pct_cod01": "3800000.00",
+        "impuesto_nacional_consumo_4pct_cod04": "800000.00",
+        "total_credit_note_gross": "24600000.00",
+        "parafiscal_contributions_reversed": {
+          "futic_contraprestacion_1_90pct": "380000.00",
+          "contribucion_crc_0_15pct": "30000.00"
+        }
+      },
+      "dian_ubl21_anexo19_artifact": {
+        "credit_note_number": "NCSLA99001",
+        "referenced_invoice_cufe": "948c7a1b2e3f4d5c6b7a8e9f0d1c2b3a4e5f6d7c8b9a0e1f2d3c4b5a6e7f8d9c0b1a2e3f4d5c6b7a8e9f0d1c2b3a4e5f",
+        "cude_input_string": "NCSLA990012026-11-0521:44:12-05:0020000000.00013800000.0004800000.00030.0024600000.00900998877901112233753191",
+        "cude_sha384_signature": "9735c793b62aaad9ea3cb0b5a97cbc51c9645d9549348b0183cddc2a370100edc15c3197a9e972710d370b931e29cf81",
+        "dian_concept_code": "3 (Rebaja o descuento parcial o total por SLA)"
+      }
+    }
+  }
+}

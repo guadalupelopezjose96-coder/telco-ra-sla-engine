@@ -1,0 +1,79 @@
+{
+  "certificate_id": "MASTER-CERT-ARC-OPS-SEC-100PCT",
+  "timestamp_utc": "2026-11-05T21:44:13.048272+00:00",
+  "domain_2_architecture": {
+    "ARC-01": {
+      "status": "PASS",
+      "evidence": "VRF MGMT-OOBM isolated, SRv6 + TI-LFA + BFD (3ms x 3) active"
+    },
+    "ARC-02": {
+      "status": "PASS",
+      "evidence": "SLSA L3 verified, SBOM HSM ML-DSA signature: fa27c3e2e14c203a78dab434..."
+    },
+    "ARC-03": {
+      "status": "PASS",
+      "evidence": "NETCONF/YANG enabled, GitOps SHA-256 match (Drift: 0.0%)"
+    },
+    "ARC-04": {
+      "status": "PASS",
+      "evidence": "RPKI Invalid drop policy, uRPF BCP 38, TCP-AO & GTSM active"
+    },
+    "ARC-05": {
+      "status": "PASS",
+      "evidence": "ETSI NFV-MANO VNFD, TMF622/638/641 CTK & NUMA/SR-IOV/HugePages verified"
+    }
+  },
+  "domain_3_operations_drp_chaos": {
+    "OPS-01": {
+      "status": "PASS",
+      "evidence": "gNMI Streaming (1s/5s/ON_CHANGE), IPFIX & TWAMP RFC 5357 Responder active"
+    },
+    "OPS-02": {
+      "status": "PASS",
+      "evidence": "BGP Graceful Shutdown (RFC 8326 Com 65535:0), NSR/NSF & K8s maxUnavailable=0"
+    },
+    "OPS-03": {
+      "status": "PASS",
+      "evidence": "6-Class Hardware DiffServ QoS (Strict Priority CS6 & LLQ EF DSCP 46)"
+    },
+    "OPS-04": {
+      "status": "PASS",
+      "evidence": "SyncE ITU-T G.8262 + PTP IEEE 1588v2 G.8275.1 T-BC (< 1,100 ns Time Error)"
+    },
+    "OPS-05": {
+      "status": "PASS",
+      "evidence": "2N Trunking capped at 42% Busy Hour load + K8s HPA threshold at 42%"
+    },
+    "DRP-01": {
+      "status": "PASS",
+      "evidence": "Tri-Site Tier IV Active-Active-Arbitrator (RTO < 200ms, RPO = 0) & Air-Gap WORM"
+    },
+    "CHAOS-01": {
+      "status": "PASS",
+      "evidence": "All 6 Quarterly Chaos Experiments certified (Optical cut switchover: 12.0 ms)"
+    }
+  },
+  "domain_4_cybersecurity_hardening": {
+    "SEC-01": {
+      "status": "PASS",
+      "evidence": "MACsec 802.1AE GCM-AES-XPN-256 (must-secure), mTLS 1.3 & FIPS 203 ML-KEM-1024"
+    },
+    "SEC-02": {
+      "status": "PASS",
+      "evidence": "CIS/DISA STIG Hardened (0 cleartext ports), Hardware ASIC CoPP/LPTS & TACACS+ TLS"
+    },
+    "SEC-03": {
+      "status": "PASS",
+      "evidence": "Signaling Firewall (SS7/Diameter/GTP/SIP-TLS/5G SEPP) + BGP Flowspec (RFC 8955)"
+    },
+    "SEC-04": {
+      "status": "PASS",
+      "evidence": "TPM 2.0 PCR Quote (7d734c8a8e41b6f9e4a5...) & Syslog-TLS RFC 5425 to WORM storage"
+    },
+    "SEC-05": {
+      "status": "PASS",
+      "evidence": "ISO 27001/27011, ISO 22301, SOC 2 Type II, GSMA NESAS & FCC/CE RED validated"
+    }
+  },
+  "worm_rfc3161_sha384_seal": "aa2d71f5eadf745a4f4666e1b1f99369245d74bd21bc8c9e2283e0f4a970c89f1a55354c9b7a99addc7c84a1605025b1"
+}

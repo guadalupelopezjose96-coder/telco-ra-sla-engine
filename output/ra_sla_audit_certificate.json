@@ -1,0 +1,153 @@
+{
+  "certificate_id": "RA-SLA-CERT-CN-202610-72DF31",
+  "timestamp_utc": "2026-11-05T21:44:12.513207+00:00",
+  "controls_verified": [
+    "GOV-06",
+    "OPS-01",
+    "OPS-03",
+    "SEC-04",
+    "FIN-01",
+    "FIN-04",
+    "FIN-05"
+  ],
+  "oecd_tax_localization": {
+    "tax_jurisdiction_country": "ES",
+    "matching_evidences_count": 4,
+    "evidence_sources": {
+      "sim_or_nni_mcc_country": "ES",
+      "bgp_peering_geoip_country": "ES",
+      "bank_iban_country": "ES",
+      "billing_address_country": "ES"
+    },
+    "oecd_compliant": true
+  },
+  "revenue_assurance_reconciliation": {
+    "gnmi_network_octets": 948571200450000,
+    "bss_mediated_octets": 948571200450000,
+    "discrepancy_percentage": "0.00000",
+    "ra_status": "VERIFIED_ZERO_LEAKAGE"
+  },
+  "sla_calculation_summary": {
+    "total_seconds_in_month": 2678400,
+    "raw_down_seconds": 455,
+    "excluded_seconds": 310,
+    "imputable_down_seconds": 145,
+    "verified_availability_pct": "99.99459",
+    "sla_tier_applied": "99.990% <= A < 99.999% (10% MRC Credit)",
+    "c_disp_rate_pct": "10.00",
+    "degraded_days_qualified": 2,
+    "c_deg_rate_pct": "10.00",
+    "effective_combined_penalty_pct": "20.00",
+    "financial_settlement": {
+      "currency": "EUR",
+      "original_mrc_base": "25000.00",
+      "credit_note_taxable_base": "5000.00",
+      "vat_rate_pct": "21.00",
+      "vat_tax_reduction": "1050.00",
+      "total_credit_note_gross": "6050.00",
+      "usf_regulatory_base_reduction": "75.00",
+      "net_mrc_after_sla_credit": "20000.00"
+    },
+    "chronic_breach_termination_right": false,
+    "outage_events_audit": [
+      {
+        "event_id": "TWAMP-EVT-9001",
+        "duration_seconds": 18,
+        "cause_code": "ISSU_BGP_GRACEFUL_SHUTDOWN",
+        "classification": "IGNORED_SUB_THRESHOLD_OR_TI_LFA_PROTECTION",
+        "rfc3161_tst_hash": "8f9d2a1b4c5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a"
+      },
+      {
+        "event_id": "TWAMP-EVT-9044",
+        "duration_seconds": 1,
+        "cause_code": "FIBER_CUT_TI_LFA_SWITCHOVER_12MS",
+        "classification": "IGNORED_SUB_THRESHOLD_OR_TI_LFA_PROTECTION",
+        "rfc3161_tst_hash": "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b"
+      },
+      {
+        "event_id": "TWAMP-EVT-9102",
+        "duration_seconds": 145,
+        "cause_code": "DUAL_ROADM_LINE_CARD_HARDWARE_FAULT",
+        "classification": "IMPUTABLE_QUALIFIED_OUTAGE (T_down - T_excl)",
+        "rfc3161_tst_hash": "3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d"
+      },
+      {
+        "event_id": "TWAMP-EVT-9155",
+        "duration_seconds": 310,
+        "cause_code": "EXTERNAL_DDOS_BEYOND_CIR_FLOWSPEC_RTBH",
+        "classification": "EXCLUDED_CONTRACTUAL_CAUSE (T_excl)",
+        "rfc3161_tst_hash": "7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f"
+      }
+    ],
+    "qos_degradation_audit": [
+      {
+        "date": "2026-10-08",
+        "dscp_class": "EF",
+        "consecutive_5min_windows": 2,
+        "slo_violations": [
+          "RTT 34.20ms > 30.00ms",
+          "Jitter 6.10ms > 5.00ms",
+          "POLQA MOS 4.15 < 4.20"
+        ],
+        "penalty_applied": false
+      },
+      {
+        "date": "2026-10-15",
+        "dscp_class": "EF",
+        "consecutive_5min_windows": 5,
+        "slo_violations": [
+          "RTT 38.50ms > 30.00ms",
+          "Jitter 7.40ms > 5.00ms",
+          "PLR 0.002% > 0.000%",
+          "POLQA MOS 3.92 < 4.20"
+        ],
+        "penalty_applied": true
+      },
+      {
+        "date": "2026-10-22",
+        "dscp_class": "CS6",
+        "consecutive_5min_windows": 6,
+        "slo_violations": [
+          "PTP Phase Error 1350ns > 1100ns"
+        ],
+        "penalty_applied": true
+      }
+    ]
+  },
+  "ifrs15_accounting_journal": {
+    "accounting_standard": "IFRS 15 (Variable Consideration - Paragraphs 50-59)",
+    "journal_entry_id": "JE-IFRS15-202610-SLA",
+    "posting_date": "2026-11-05",
+    "currency": "EUR",
+    "lines": [
+      {
+        "account_code": "705100",
+        "account_name": "Contra-Revenue: SLA Service Credits (IFRS 15 Variable Consideration)",
+        "debit": "5000.00",
+        "credit": "0.00"
+      },
+      {
+        "account_code": "477001",
+        "account_name": "Output VAT Payable Adjustment (Tax Authority CTC)",
+        "debit": "1050.00",
+        "credit": "0.00"
+      },
+      {
+        "account_code": "430001",
+        "account_name": "Accounts Receivable - Wholesale/B2B Counterparty (Netting)",
+        "debit": "0.00",
+        "credit": "6050.00"
+      }
+    ],
+    "regulatory_accrual_memo": {
+      "usf_provision_reversal_account": "631200 - Universal Service Fund Levy",
+      "amount_reduced": "75.00"
+    }
+  },
+  "electronic_credit_note_ubl21": {
+    "credit_note_id": "CN-202610-72DF31",
+    "xml_file_path": "/data/data/com.termux/files/home/telco-ra-sla-engine/output/credit_note_ubl21.xml",
+    "hsm_key_used": "HSM-FIPS140-3-L3-MLDSA87-KEY01",
+    "xml_hmac_sha384_signature": "649a28f385e53d90dfd537cb520de8188aa8f5c9e56599d8b0c94daa2be81dffbe8da4fd32763de2341678e7650c4983"
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "holding_entity": {
+    "legal_name": "Standard 1979 Holdings, LLC",
+    "primary_domain": "standard1979.com",
+    "jurisdiction": "State of Florida, United States",
+    "ip_ownership_pct": "100.00",
+    "shamir_quorum_scheme": "3-of-5 GF(256)",
+    "drp_vault_cipher": "AES-256-CBC-PBKDF2-600000-ITER"
+  },
+  "workspace_federation": {
+    "primary_host_domain": "fourphonix.com",
+    "super_admin_principal": "owner@fourphonix.com",
+    "trusted_sister_domains": [
+      "standard1979.com",
+      "AuraIntelCore.com",
+      "AuraTetrax.com",
+      "AuraIntelStudios3D.com",
+      "prophonix.com"
+    ]
+  },
+  "six_domains_registry": [
+    {
+      "domain": "standard1979.com",
+      "operating_entity": "Standard 1979 Holdings, LLC",
+      "tier_role": "PARENT_HOLDING_AND_IP_TREASURY",
+      "monthly_agr_usd": "0.00",
+      "irc482_royalty_rate_pct": "0.00",
+      "dns_security": {
+        "spf": "v=spf1 include:_spf.google.com ~all",
+        "dmarc": "v=DMARC1; p=reject; rua=mailto:dmarc@standard1979.com",
+        "dkim_ed25519": true,
+        "dnssec_active": true
+      },
+      "compliance_controls": ["FINCEN_BOI", "SOC2_TYPE_II", "ISO27001_2022", "IRC_482_IP_HOLDER", "RFC6962_MERKLE_ROOT"]
+    },
+    {
+      "domain": "AuraIntelCore.com",
+      "operating_entity": "Aura Technologies Operating, LLC",
+      "tier_role": "OIDC_OAUTH21_SSO_AND_LLM_GATEWAY",
+      "monthly_agr_usd": "185000.00",
+      "irc482_royalty_rate_pct": "15.00",
+      "dns_security": {
+        "spf": "v=spf1 include:_spf.google.com ~all",
+        "dmarc": "v=DMARC1; p=reject; rua=mailto:dmarc@auraintelcore.com",
+        "dkim_ed25519": true,
+        "dnssec_active": true
+      },
+      "ai_export_metrics": {
+        "iso42001_certified": true,
+        "nist_ai_rmf_profile": "GOVERN-MAP-MEASURE-MANAGE-1.0",
+        "eu_ai_act_art50_transparency": true,
+        "bis_ear_eccn_classification": "ECCN_3A090_4A090_SCREENED",
+        "ofac_sdn_hits": 0
+      },
+      "compliance_controls": ["ISO42001_2023", "NIST_AI_RMF_1.0", "OAUTH21_MTLS", "BIS_EAR_OFAC_CLEAN"]
+    },
+    {
+      "domain": "AuraTetrax.com",
+      "operating_entity": "Aura Technologies Operating, LLC",
+      "tier_role": "MODULAR_PAAS_AND_AGENTIC_ORCHESTRATION",
+      "monthly_agr_usd": "140000.00",
+      "irc482_royalty_rate_pct": "15.00",
+      "dns_security": {
+        "spf": "v=spf1 include:_spf.google.com ~all",
+        "dmarc": "v=DMARC1; p=reject; rua=mailto:dmarc@auratetrax.com",
+        "dkim_ed25519": true,
+        "dnssec_active": true
+      },
+      "agentic_fairness_metrics": {
+        "protected_group_selection_rate": "0.84",
+        "reference_group_selection_rate": "0.96",
+        "nist_800_88_dsar_crypto_shredding_active": true,
+        "fdbr_fipa_compliant": true
+      },
+      "compliance_controls": ["EEOC_FOUR_FIFTHS_PASS", "NIST_SP_800_88_REV1", "FDBR_FIPA", "ASC_606"]
+    },
+    {
+      "domain": "AuraIntelStudios3D.com",
+      "operating_entity": "Aura Technologies Operating, LLC",
+      "tier_role": "C2PA_V21_3D_GENERATIVE_ASSETS",
+      "monthly_agr_usd": "95000.00",
+      "irc482_royalty_rate_pct": "15.00",
+      "dns_security": {
+        "spf": "v=spf1 include:_spf.google.com ~all",
+        "dmarc": "v=DMARC1; p=reject; rua=mailto:dmarc@auraintelstudios3d.com",
+        "dkim_ed25519": true,
+        "dnssec_active": true
+      },
+      "c2pa_3d_provenance": {
+        "c2pa_version": "2.1",
+        "signing_algorithm": "Ed25519 + FIPS-204-ML-DSA-87",
+        "hard_binding_alg": "SHA3-512",
+        "synthetic_training_opt_out_assertion": "c2pa.training-mining=notAllowed"
+      },
+      "compliance_controls": ["C2PA_V21_SIGNED", "EU_AI_ACT_ART50_WATERMARK", "PCI_DSS_V4_SAQ_A"]
+    },
+    {
+      "domain": "fourphonix.com",
+      "operating_entity": "Phonix Communications Operating, LLC",
+      "tier_role": "PRIMARY_WORKSPACE_HOST_AND_UCAAS_CORE",
+      "monthly_agr_usd": "210000.00",
+      "irc482_royalty_rate_pct": "10.00",
+      "dns_security": {
+        "spf": "v=spf1 include:_spf.google.com ~all",
+        "dmarc": "v=DMARC1; p=reject; rua=mailto:owner@fourphonix.com",
+        "dkim_ed25519": true,
+        "dnssec_active": true
+      },
+      "telecom_ucaas_metrics": {
+        "stir_shaken_attestation": "A_FULL_ATIS_1000074",
+        "e911_karis_law_ray_baums_pidf_lo": true,
+        "florida_ftsa_sec_501_059_opt_in_verified": true,
+        "cpni_47cfr_64_2011_audit_clean": true,
+        "interstate_revenue_share_pct": "60.00"
+      },
+      "compliance_controls": ["FCC_STIR_SHAKEN", "E911_PIDF_LO", "FL_FTSA_501_059", "CPNI_47CFR64", "GWS_PRIMARY_HOST"]
+    },
+    {
+      "domain": "prophonix.com",
+      "operating_entity": "Phonix Communications Operating, LLC",
+      "tier_role": "CARRIER_TRUNKING_B2B_AND_SLA_99999",
+      "monthly_agr_usd": "310000.00",
+      "irc482_royalty_rate_pct": "10.00",
+      "dns_security": {
+        "spf": "v=spf1 include:_spf.google.com ~all",
+        "dmarc": "v=DMARC1; p=reject; rua=mailto:dmarc@prophonix.com",
+        "dkim_ed25519": true,
+        "dnssec_active": true
+      },
+      "telecom_ucaas_metrics": {
+        "stir_shaken_attestation": "A_FULL_ATIS_1000074",
+        "e911_karis_law_ray_baums_pidf_lo": true,
+        "calea_etsi_ts_102_232_isolated": true,
+        "cmmc_20_level2_compliant": true,
+        "sla_verified_availability_pct": "99.99942",
+        "interstate_revenue_share_pct": "70.00"
+      },
+      "compliance_controls": ["SLA_99999_CARRIER", "CALEA_ETSI_LI", "CMMC_L2", "RPKI_MANRS_SRV6", "FL_CST_FCC_USF"]
+    }
+  ]
+}

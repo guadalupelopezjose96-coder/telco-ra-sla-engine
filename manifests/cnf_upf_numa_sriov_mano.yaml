@@ -1,0 +1,108 @@
+# ========================================================================================
+# DESCRIPTOR DE FUNCIÓN DE RED CLOUD-NATIVE (5G UPF / SBC CNF) BAJO ETSI NFV-MANO
+# CONTROLES CUBIERTOS: ARC-01, ARC-02, ARC-05, OPS-01, OPS-05, SEC-01, SEC-04
+# ========================================================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: carrier-5g-upf-fastpath-cnf
+  namespace: telco-userplane-prod
+  labels:
+    etsi.nfv.mano/vnfd-id: "VNFD-UPF-CARRIER-2026-01"
+    tmforum.oda/exposed-apis: "TMF622-TMF638-TMF641"
+    slsa.dev/provenance-level: "SLSA-L3-HSM-FIPS140-3-MLDSA87"
+spec:
+  replicas: 4
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: upf-fastpath
+  template:
+    metadata:
+      labels:
+        app: upf-fastpath
+      annotations:
+        # Interfaces aceleradas SR-IOV / DPDK en doble plano físico 2N (Control ARC-05)
+        k8s.v1.cni.cncf.io/networks: |
+          [
+            {"name": "sriov-n3-ran-net-a", "interface": "n3a"},
+            {"name": "sriov-n3-ran-net-b", "interface": "n3b"},
+            {"name": "sriov-n6-core-srv6-a", "interface": "n6a"},
+            {"name": "sriov-n6-core-srv6-b", "interface": "n6b"}
+          ]
+        cpu-load-balancing.crio.io: "disable"
+        irq-load-balancing.crio.io: "disable"
+    spec:
+      # Afinidad estricta NUMA y anti-afinidad de chasis físico (Control ARC-01 y ARC-05)
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: upf-fastpath
+      containers:
+        - name: upf-dpdk-engine
+          # Imagen firmada criptográficamente por digest inmutable SHA-256 + Cosign PQC
+          image: registry.internal.carrier/telco-5g/upf-dpdk@sha256:9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08
+          securityContext:
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+              add: ["IPC_LOCK", "NET_RAW"]
+          resources:
+            # Clase QoS Guaranteed con núcleos dedicados y HugePages de 1GB para DPDK
+            requests:
+              cpu: "16"
+              memory: "32Gi"
+              hugepages-1Gi: "16Gi"
+              intel.com/sriov_vfio_400g_a: "2"
+              intel.com/sriov_vfio_400g_b: "2"
+            limits:
+              cpu: "16"
+              memory: "32Gi"
+              hugepages-1Gi: "16Gi"
+              intel.com/sriov_vfio_400g_a: "2"
+              intel.com/sriov_vfio_400g_b: "2"
+          env:
+            - name: NUMA_NODE_POLICY
+              value: "single-numa-node-strict"
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "https://otel.collector.internal:4317"
+            - name: TLS_MIN_VERSION
+              value: "TLSv1.3"
+            - name: PQC_KEM_ALGORITHM
+              value: "X25519MLKEM1024"
+          volumeMounts:
+            - name: hugepage-1gi
+              mountPath: /dev/hugepages
+      volumes:
+        - name: hugepage-1gi
+          emptyDir:
+            medium: HugePages-1Gi
+---
+# Autoescalado Horizontal (HPA) al 42% de umbral para preservar margen 2N (Control OPS-05)
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: carrier-upf-hpa-42pct-guard
+  namespace: telco-userplane-prod
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: carrier-5g-upf-fastpath-cnf
+  minReplicas: 4
+  maxReplicas: 16
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 42

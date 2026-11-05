@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd" Version="4.0" Serie="NCSLA" Folio="90042" Fecha="2026-11-05T12:00:00" SubTotal="100000.00" Moneda="MXN" Total="119480.00" TipoDeComprobante="E" Exportacion="01" MetodoPago="PUE" FormaPago="17" LugarExpedicion="06600">
+  <cfdi:CfdiRelacionados TipoRelacion="01">
+    <cfdi:CfdiRelacionado UUID="6B29FC40-CA47-1067-B31D-00DD010662DA"/>
+  </cfdi:CfdiRelacionados>
+  <cfdi:Emisor Rfc="CCG2001159A1" Nombre="CARRIER CORE GLOBAL TELECOM MEXICO SA DE CV" RegimenFiscal="601"/>
+  <cfdi:Receptor Rfc="ECI1805208B2" Nombre="ENTERPRISE CLOUD INTERCONNECT MEXICO S DE RL DE CV" DomicilioFiscalReceptor="01210" RegimenFiscalReceptor="601" UsoCFDI="G02"/>
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="83111600" NoIdentificacion="SLA-CARRIER-99999" Cantidad="1" ClaveUnidad="E48" Unidad="Servicio" Descripcion="Bonificacion automatica por Acuerdo de Nivel de Servicio (SLA 99.999%)" ValorUnitario="100000.00" Importe="100000.00" ObjetoImp="02">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="100000.00" Impuesto="003" TipoFactor="Tasa" TasaOCuota="0.030000" Importe="3000.00"/>
+          <cfdi:Traslado Base="103000.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16480.00"/>
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosTrasladados="19480.00">
+    <cfdi:Traslados>
+      <cfdi:Traslado Base="100000.00" Impuesto="003" TipoFactor="Tasa" TasaOCuota="0.030000" Importe="3000.00"/>
+      <cfdi:Traslado Base="103000.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16480.00"/>
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+</cfdi:Comprobante>

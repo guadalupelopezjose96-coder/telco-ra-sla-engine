@@ -1,0 +1,158 @@
+{
+  "certificate_id": "FIN02-FIN03-CERT-CE9570FF",
+  "timestamp_utc": "2026-11-05T21:44:12.885538+00:00",
+  "controls_verified": [
+    "FIN-02",
+    "FIN-03"
+  ],
+  "fin02_wholesale_roaming_and_pci": {
+    "gsma_tap3_bce_settlement": {
+      "imf_sdr_to_eur_exchange_rate": "1.224500",
+      "tap3_files_reconciled": [
+        {
+          "tap_file_id": "CDESPMCUSAVZ00192",
+          "vpmn_tadig": "USAVZ",
+          "vpmn_name": "Verizon Wireless USA",
+          "claimed_sdr": "23.490000",
+          "verified_sdr": "23.481000",
+          "discrepancy_pct": "0.04",
+          "settlement_status": "ACCEPTED_WITHIN_TOLERANCE",
+          "undisputed_payable_eur": "28.76",
+          "disputed_withheld_eur": "0.00",
+          "cdi_tax_residency_verified": true
+        },
+        {
+          "tap_file_id": "CDESPMCCOLMV00084",
+          "vpmn_tadig": "COLMV",
+          "vpmn_name": "Operador Movil Andino S.A.",
+          "claimed_sdr": "12.000000",
+          "verified_sdr": "10.920000",
+          "discrepancy_pct": "9.00",
+          "settlement_status": "PARTIAL_DISPUTE_RAP_ISSUED",
+          "undisputed_payable_eur": "13.37",
+          "disputed_withheld_eur": "1.32",
+          "cdi_tax_residency_verified": true
+        }
+      ],
+      "gsma_rap_disputes_generated": [
+        {
+          "rap_file_id": "RAP-ESPMC-COLMV-3AC023",
+          "referenced_tap_file_id": "CDESPMCCOLMV00084",
+          "vpmn_tadig": "COLMV",
+          "gsma_return_code": "RC-204 (Volume/Charge Discrepancy > 1.00% SLA Threshold)",
+          "disputed_sdr": "1.080000",
+          "disputed_eur": "1.32",
+          "affected_cdrs": [
+            {
+              "cdr_id": "TAP-CO-4010",
+              "service_type": "5G_DATA_MB",
+              "claimed_sdr": "12.000000",
+              "verified_sdr": "10.920000",
+              "overcharge_sdr": "1.080000"
+            }
+          ]
+        }
+      ],
+      "bce_bilateral_netting": [
+        {
+          "bce_settlement_id": "BCE-202610-ESPMC-MEXLT",
+          "partner_tadig": "MEXLT",
+          "calculated_outbound_usage_sdr": "17635.00",
+          "committed_floor_sdr": "15000.00",
+          "effective_outbound_sdr": "17635.00",
+          "inbound_receivable_offset_sdr": "11200.00",
+          "net_clearing_payable_sdr": "6435.00",
+          "net_clearing_payable_eur": "7879.66"
+        }
+      ],
+      "clearing_house_summary": {
+        "total_undisputed_net_payable_eur": "7921.79",
+        "total_disputed_held_in_escrow_eur": "1.32"
+      }
+    },
+    "pci_dss_v4_audit": {
+      "standard": "PCI-DSS v4.0 (Requirements 3.2, 3.3, 3.4)",
+      "aoc_certificate_id": "PCI-DSS-V4.0-L1-AOC-2026-99812",
+      "sampled_transactions_count": 2,
+      "unmasked_pan_or_cvv_leaks": 0,
+      "pci_audit_verdict": "COMPLIANT_ZERO_CHD_STORAGE"
+    }
+  },
+  "fin03_openchain_and_frand_sep": {
+    "openchain_standard": "ISO/IEC 5230:2020 (OpenChain) & ISO/IEC 5962:2021 (SPDX 2.3)",
+    "sbom_document_name": "telco-core-5g-ims-sba-release-2026.10",
+    "total_packages_audited": 4,
+    "copyleft_contamination_incidents": 0,
+    "sbom_package_verdicts": [
+      {
+        "spdx_id": "SPDXRef-Pkg-DPDK",
+        "package_name": "dpdk-userplane-fastpath",
+        "version": "24.11.1",
+        "license_declared": "BSD-3-Clause",
+        "usage_context": "LINKED_INTO_PROPRIETARY_UPF_BINARY",
+        "openchain_verdict": "APPROVED_PERMISSIVE"
+      },
+      {
+        "spdx_id": "SPDXRef-Pkg-FRRouting",
+        "package_name": "frr-routing-daemon",
+        "version": "10.1",
+        "license_declared": "GPL-2.0-or-later",
+        "usage_context": "STANDALONE_OS_PROCESS_IPC_NETCONF",
+        "openchain_verdict": "APPROVED_ISOLATED_OS_PROCESS_WITH_SOURCE_ARCHIVE"
+      },
+      {
+        "spdx_id": "SPDXRef-Pkg-OpenTelemetry",
+        "package_name": "opentelemetry-collector-contrib",
+        "version": "0.112.0",
+        "license_declared": "Apache-2.0",
+        "usage_context": "STANDALONE_CONTAINER",
+        "openchain_verdict": "APPROVED_PERMISSIVE"
+      },
+      {
+        "spdx_id": "SPDXRef-Pkg-StrongSwan",
+        "package_name": "strongswan-ikev2-pqc",
+        "version": "6.0.0",
+        "license_declared": "GPL-2.0-only",
+        "usage_context": "STANDALONE_OS_PROCESS_IPC_NETCONF",
+        "openchain_verdict": "APPROVED_ISOLATED_OS_PROCESS_WITH_SOURCE_ARCHIVE"
+      }
+    ],
+    "frand_sep_royalty_settlement": {
+      "patent_pools_audited": [
+        {
+          "patent_pool_id": "SEP-POOL-3GPP-EVS-AMRWB",
+          "standard_reference": "3GPP TS 26.441 (EVS) & ITU-T G.722.2 (AMR-WB VoLTE/VoNR)",
+          "licensor_entity": "Voice Codec Patent Pool Licensing Administrator",
+          "licensed_cap": 500000,
+          "peak_active_units": 412500,
+          "license_utilization_pct": "82.50",
+          "accrued_monthly_royalty_eur": "16500.00",
+          "frand_status": "ACTIVE_FRAND_COMPLIANT"
+        },
+        {
+          "patent_pool_id": "SEP-POOL-ITU-HEVC-H265",
+          "standard_reference": "ITU-T H.265 / ISO/IEC 23008-2 (HEVC IPTV/Video Streaming)",
+          "licensor_entity": "Access Advance / Via LA HEVC Pool",
+          "licensed_cap": 250000,
+          "peak_active_units": 195000,
+          "license_utilization_pct": "78.00",
+          "accrued_monthly_royalty_eur": "12675.00",
+          "frand_status": "ACTIVE_FRAND_COMPLIANT"
+        },
+        {
+          "patent_pool_id": "SEP-POOL-ETSI-5G-NR-CORE",
+          "standard_reference": "3GPP Release 17/18 5G NR & Service-Based Architecture",
+          "licensor_entity": "Avanci / Multi-Holder 5G FRAND Bilateral Agreements",
+          "licensed_cap": 1000000,
+          "peak_active_units": 780000,
+          "license_utilization_pct": "78.00",
+          "accrued_monthly_royalty_eur": "62400.00",
+          "frand_status": "ACTIVE_FRAND_COMPLIANT"
+        }
+      ],
+      "total_monthly_frand_royalties_accrued_eur": "91575.00",
+      "ledger_account": "626100 - Royalties for Standard Essential Patents (FRAND SEP)"
+    }
+  },
+  "worm_integrity_sha384": "c2011bb1feacb093a60b9fd0686c48c1e2bd35abb597a1c472b0efbf858acd80a26099e8fb3432829d76249281dba970"
+}

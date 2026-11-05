@@ -1,0 +1,208 @@
+{
+  "certificate_id": "S1979-SIX-DOMAINS-MASTER-AUDIT-CERT",
+  "timestamp_utc": "2026-11-05T21:44:13.663561+00:00",
+  "holding_entity": {
+    "legal_name": "Standard 1979 Holdings, LLC",
+    "primary_domain": "standard1979.com",
+    "jurisdiction": "State of Florida, United States",
+    "ip_ownership_pct": "100.00",
+    "shamir_quorum_scheme": "3-of-5 GF(256)",
+    "drp_vault_cipher": "AES-256-CBC-PBKDF2-600000-ITER"
+  },
+  "domain_6_workspace_and_dns_federation": {
+    "total_domains_verified": 6,
+    "google_workspace_primary_host": "fourphonix.com",
+    "super_admin_principal": "owner@fourphonix.com",
+    "sister_domains_allowlisted": [
+      "AuraIntelCore.com",
+      "AuraIntelStudios3D.com",
+      "AuraTetrax.com",
+      "prophonix.com",
+      "standard1979.com"
+    ],
+    "domain_dns_verdicts": [
+      {
+        "domain": "standard1979.com",
+        "operating_entity": "Standard 1979 Holdings, LLC",
+        "workspace_role": "TRUSTED_SISTER_DOMAIN",
+        "dmarc_policy": "p=reject",
+        "dkim_ed25519": true,
+        "dnssec": true,
+        "status": "VERIFIED"
+      },
+      {
+        "domain": "AuraIntelCore.com",
+        "operating_entity": "Aura Technologies Operating, LLC",
+        "workspace_role": "TRUSTED_SISTER_DOMAIN",
+        "dmarc_policy": "p=reject",
+        "dkim_ed25519": true,
+        "dnssec": true,
+        "status": "VERIFIED"
+      },
+      {
+        "domain": "AuraTetrax.com",
+        "operating_entity": "Aura Technologies Operating, LLC",
+        "workspace_role": "TRUSTED_SISTER_DOMAIN",
+        "dmarc_policy": "p=reject",
+        "dkim_ed25519": true,
+        "dnssec": true,
+        "status": "VERIFIED"
+      },
+      {
+        "domain": "AuraIntelStudios3D.com",
+        "operating_entity": "Aura Technologies Operating, LLC",
+        "workspace_role": "TRUSTED_SISTER_DOMAIN",
+        "dmarc_policy": "p=reject",
+        "dkim_ed25519": true,
+        "dnssec": true,
+        "status": "VERIFIED"
+      },
+      {
+        "domain": "fourphonix.com",
+        "operating_entity": "Phonix Communications Operating, LLC",
+        "workspace_role": "PRIMARY_HOST_DOMAIN",
+        "dmarc_policy": "p=reject",
+        "dkim_ed25519": true,
+        "dnssec": true,
+        "status": "VERIFIED"
+      },
+      {
+        "domain": "prophonix.com",
+        "operating_entity": "Phonix Communications Operating, LLC",
+        "workspace_role": "TRUSTED_SISTER_DOMAIN",
+        "dmarc_policy": "p=reject",
+        "dkim_ed25519": true,
+        "dnssec": true,
+        "status": "VERIFIED"
+      }
+    ]
+  },
+  "irc482_finops_and_fl_cst_usf_ledger": {
+    "tax_and_accounting_standards": [
+      "FASB ASC 606",
+      "IRS IRC Section 482",
+      "FCC Form 499-Q USF",
+      "Fla. Stat. Ch. 202 (FL CST)"
+    ],
+    "aura_technologies_operating_llc": {
+      "domains": [
+        "AuraIntelCore.com",
+        "AuraTetrax.com",
+        "AuraIntelStudios3D.com"
+      ],
+      "combined_agr_usd": "420000.00",
+      "irc482_royalty_15pct_to_holding_usd": "63000.00"
+    },
+    "phonix_communications_operating_llc": {
+      "domains": [
+        "fourphonix.com",
+        "prophonix.com"
+      ],
+      "combined_agr_usd": "520000.00",
+      "irc482_royalty_10pct_to_holding_usd": "52000.00",
+      "fcc_usf_quarterly_accrual_usd": "118678.00",
+      "florida_cst_accrual_usd": "13168.80"
+    },
+    "standard_1979_holdings_llc_treasury": {
+      "domain": "standard1979.com",
+      "total_intercompany_royalty_receivable_usd": "115000.00"
+    },
+    "per_domain_finops_ledger": [
+      {
+        "domain": "standard1979.com",
+        "operating_entity": "Standard 1979 Holdings, LLC",
+        "monthly_agr_usd": "0.00",
+        "irc482_royalty_rate_pct": "0.00",
+        "royalty_remitted_to_standard1979_usd": "0.00",
+        "net_operating_revenue_after_royalty_usd": "0.00",
+        "fcc_usf_contribution_usd": "0.00",
+        "florida_cst_tax_usd": "0.00"
+      },
+      {
+        "domain": "AuraIntelCore.com",
+        "operating_entity": "Aura Technologies Operating, LLC",
+        "monthly_agr_usd": "185000.00",
+        "irc482_royalty_rate_pct": "15.00",
+        "royalty_remitted_to_standard1979_usd": "27750.00",
+        "net_operating_revenue_after_royalty_usd": "157250.00",
+        "fcc_usf_contribution_usd": "0.00",
+        "florida_cst_tax_usd": "0.00"
+      },
+      {
+        "domain": "AuraTetrax.com",
+        "operating_entity": "Aura Technologies Operating, LLC",
+        "monthly_agr_usd": "140000.00",
+        "irc482_royalty_rate_pct": "15.00",
+        "royalty_remitted_to_standard1979_usd": "21000.00",
+        "net_operating_revenue_after_royalty_usd": "119000.00",
+        "fcc_usf_contribution_usd": "0.00",
+        "florida_cst_tax_usd": "0.00"
+      },
+      {
+        "domain": "AuraIntelStudios3D.com",
+        "operating_entity": "Aura Technologies Operating, LLC",
+        "monthly_agr_usd": "95000.00",
+        "irc482_royalty_rate_pct": "15.00",
+        "royalty_remitted_to_standard1979_usd": "14250.00",
+        "net_operating_revenue_after_royalty_usd": "80750.00",
+        "fcc_usf_contribution_usd": "0.00",
+        "florida_cst_tax_usd": "0.00"
+      },
+      {
+        "domain": "fourphonix.com",
+        "operating_entity": "Phonix Communications Operating, LLC",
+        "monthly_agr_usd": "210000.00",
+        "irc482_royalty_rate_pct": "10.00",
+        "royalty_remitted_to_standard1979_usd": "21000.00",
+        "net_operating_revenue_after_royalty_usd": "189000.00",
+        "fcc_usf_contribution_usd": "43596.00",
+        "florida_cst_tax_usd": "6249.60"
+      },
+      {
+        "domain": "prophonix.com",
+        "operating_entity": "Phonix Communications Operating, LLC",
+        "monthly_agr_usd": "310000.00",
+        "irc482_royalty_rate_pct": "10.00",
+        "royalty_remitted_to_standard1979_usd": "31000.00",
+        "net_operating_revenue_after_royalty_usd": "279000.00",
+        "fcc_usf_contribution_usd": "75082.00",
+        "florida_cst_tax_usd": "6919.20"
+      }
+    ]
+  },
+  "ai_governance_c2pa_eeoc_and_dsar": {
+    "auraintelcore_governance": {
+      "iso_42001_2023": "CERTIFIED",
+      "nist_ai_rmf_1_0": "VERIFIED",
+      "bis_ear_eccn_3a090_4a090_ofac": "CLEARED_ZERO_SDN_HITS"
+    },
+    "auratetrax_fairness_and_privacy": {
+      "eeoc_disparate_impact_ratio": "0.88",
+      "eeoc_threshold_min": "0.80",
+      "eeoc_verdict": "PASS_NO_DISPARATE_IMPACT",
+      "nist_sp_800_88_dsar_shred_certificate": {
+        "sanitization_method": "Cryptographic Erase (CEK Zeroization)",
+        "destroyed_key_sha256_id": "8d50b90854ea621d83e29a6b34258cc2d83d2dc125c88d2d328db69bbd4a91fa",
+        "fdbr_ccpa_gdpr_compliant": true
+      }
+    },
+    "auraintelstudios3d_c2pa_v21": {
+      "c2pa_spec": "C2PA v2.1 (EU AI Act Art. 50 Compliant)",
+      "hard_binding_sha3_512": "dc26277aa93c263f4310ec4351ce2bab41109feef53dd04e12d4417693f30faab0c5aba12c66101ec1357ec284121e322a006b94812986a5ef46112adb1c4d57"
+    }
+  },
+  "cryptographic_rfc6962_merkle_seal": {
+    "merkle_tree_standard": "RFC 6962 (Certificate Transparency Binary Merkle Tree)",
+    "leaves_count": 6,
+    "domain_leaf_hashes_sha256": {
+      "standard1979.com": "b570094ac54055b6c198af42a65b9ac918efd7f956da3e4f2e817ebfabdd9422",
+      "AuraIntelCore.com": "0bab9f2de168daeb3321411bee0d83d1bfdf296f2eb094596d01a7c994be252e",
+      "AuraTetrax.com": "43aa78b1febbc931cfbe845cc44cc548c101fec4e0c4f1be8e3452b1b07d9f09",
+      "AuraIntelStudios3D.com": "1d1b6c0c88a21b0db04ecd7878bc0253b415a576364b372c51ed1af6cc2f24e8",
+      "fourphonix.com": "f41973fb48a69ed03ee350359ac7e188b0bfdb8077c39c340ad491617bb15ff8",
+      "prophonix.com": "02d1dee8c34a016742aa491739375b41a1b7d7f5efcfd3d70bece40f7256f820"
+    },
+    "rfc6962_merkle_root_sha256": "4de5803a827cbe2f04b1d76f0e17be3bcd6af51db221b9a28eb7ac760fab7232",
+    "pqc_hybrid_envelope_sha3_512": "43958305dbe3f96e1705cc05aad5896187ea0609f2e4c64d55e18705e9a4b42676064869f836f70f1ab1c38cddafbf5e67fed598a5db69d8d83894efbca27219"
+  }
+}

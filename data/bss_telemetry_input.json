@@ -1,0 +1,120 @@
+{
+  "billing_period": {
+    "year": 2026,
+    "month": 10,
+    "total_seconds_in_month": 2678400,
+    "start_date": "2026-10-01",
+    "end_date": "2026-10-31"
+  },
+  "supplier_operator": {
+    "legal_name": "Carrier Core Global Telecom S.A.",
+    "tax_id": "ESB99887766",
+    "country_code": "ES",
+    "address_street": "Paseo de la Castellana 259, Torre de Cristal",
+    "city": "Madrid",
+    "postal_code": "28046",
+    "hsm_key_id": "HSM-FIPS140-3-L3-MLDSA87-KEY01"
+  },
+  "customer_counterparty": {
+    "customer_id": "CUST-B2B-IX-00942",
+    "legal_name": "Enterprise Cloud & Interconnect Corp S.L.",
+    "tax_id": "ESB11223344",
+    "address_street": "Avenida Diagonal 640",
+    "city": "Barcelona",
+    "postal_code": "08017",
+    "oecd_location_evidence": {
+      "sim_or_nni_mcc_country": "ES",
+      "bgp_peering_geoip_country": "ES",
+      "bank_iban_country": "ES",
+      "billing_address_country": "ES"
+    }
+  },
+  "contract_bss": {
+    "contract_id": "SLA-CARRIER-2026-8841",
+    "circuit_id": "DWDM-SRv6-MAD-BCN-400G-2N",
+    "original_invoice_id": "INV-2026-10-0049182",
+    "original_invoice_date": "2026-11-01",
+    "currency": "EUR",
+    "mrc_base_amount": "25000.00",
+    "tax_parameters": {
+      "vat_rate_pct": "21.00",
+      "usf_contribution_rate_pct": "1.50"
+    },
+    "network_traffic_reconciliation": {
+      "gnmi_ingress_egress_octets_billed": 948571200450000,
+      "mediation_cdr_ipdr_octets_rated": 948571200450000
+    }
+  },
+  "telemetry_worm_records": {
+    "outage_events": [
+      {
+        "event_id": "TWAMP-EVT-9001",
+        "timestamp_start": "2026-10-04T02:15:10Z",
+        "duration_seconds": 18,
+        "plr_pct": "0.00",
+        "cause_code": "ISSU_BGP_GRACEFUL_SHUTDOWN",
+        "is_ti_lfa_sub50ms": false,
+        "rfc3161_tst_hash": "8f9d2a1b4c5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a"
+      },
+      {
+        "event_id": "TWAMP-EVT-9044",
+        "timestamp_start": "2026-10-12T14:22:01Z",
+        "duration_seconds": 1,
+        "plr_pct": "0.00",
+        "cause_code": "FIBER_CUT_TI_LFA_SWITCHOVER_12MS",
+        "is_ti_lfa_sub50ms": true,
+        "rfc3161_tst_hash": "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b"
+      },
+      {
+        "event_id": "TWAMP-EVT-9102",
+        "timestamp_start": "2026-10-19T11:05:00Z",
+        "duration_seconds": 145,
+        "plr_pct": "100.00",
+        "cause_code": "DUAL_ROADM_LINE_CARD_HARDWARE_FAULT",
+        "is_ti_lfa_sub50ms": false,
+        "rfc3161_tst_hash": "3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d"
+      },
+      {
+        "event_id": "TWAMP-EVT-9155",
+        "timestamp_start": "2026-10-25T19:40:12Z",
+        "duration_seconds": 310,
+        "plr_pct": "42.50",
+        "cause_code": "EXTERNAL_DDOS_BEYOND_CIR_FLOWSPEC_RTBH",
+        "is_ti_lfa_sub50ms": false,
+        "rfc3161_tst_hash": "7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f"
+      }
+    ],
+    "daily_5min_qos_degradation_windows": [
+      {
+        "date": "2026-10-08",
+        "consecutive_breach_windows": 2,
+        "dscp_class": "EF",
+        "rtt_p999_ms": "34.20",
+        "jitter_ms": "6.10",
+        "plr_pct": "0.000",
+        "polqa_mos": "4.15",
+        "ptp_phase_error_ns": 850
+      },
+      {
+        "date": "2026-10-15",
+        "consecutive_breach_windows": 5,
+        "dscp_class": "EF",
+        "rtt_p999_ms": "38.50",
+        "jitter_ms": "7.40",
+        "plr_pct": "0.002",
+        "polqa_mos": "3.92",
+        "ptp_phase_error_ns": 920
+      },
+      {
+        "date": "2026-10-22",
+        "consecutive_breach_windows": 6,
+        "dscp_class": "CS6",
+        "rtt_p999_ms": "4.10",
+        "jitter_ms": "0.40",
+        "plr_pct": "0.000",
+        "polqa_mos": "4.40",
+        "ptp_phase_error_ns": 1350
+      }
+    ]
+  }
+}

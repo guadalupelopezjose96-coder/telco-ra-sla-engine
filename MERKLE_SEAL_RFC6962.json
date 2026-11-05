@@ -1,0 +1,180 @@
+{
+  "CompliancePolicy": "POL-SEC-OSS-001 & SOC 2 CC7.5 Deterministic Sealing",
+  "HoldingEntity": "Standard 1979 Holdings, LLC",
+  "MerkleTreeRFC6962": {
+    "AuditedFileLeaves": [
+      {
+        "path": ".gitignore",
+        "rfc6962_leaf_hash": "9d16f77efec0a8aa8bf2ab0e523fe31a355c938426d093753c203d71b5297a73",
+        "sha256_file": "81af12476b3951a39f94707873626822d32d9cba1efd1e57bacd1ec8cd2120b2"
+      },
+      {
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "rfc6962_leaf_hash": "32aeb0d8ad595ec27c594149e9033392c50b38191cbf34e98c08ecfdb4635022",
+        "sha256_file": "228e685bff1584c14fffc26011432a809c18b268eea28860d6bedd8772a5cb7c"
+      },
+      {
+        "path": "build_release_bundle.sh",
+        "rfc6962_leaf_hash": "ea9a65453a80f36c49710755957d2d1c9b12434d306edef73560621f4386bb58",
+        "sha256_file": "42b6fd30ace723f904f5d392954f85e1eff9a2854b07dd8ddd30a3560e9f775c"
+      },
+      {
+        "path": "configs/carrier_asbr_core_iosxr.cfg",
+        "rfc6962_leaf_hash": "b2267092bab9209791f0d279b9e868e1eef97cc6eedc8b7b253cf584c37791ea",
+        "sha256_file": "cc8bc05b061f3ba41a1efaaa79452b612561ed9b192564bd4f7431e66755108a"
+      },
+      {
+        "path": "configs/signaling_sepp_firewall_nftables.conf",
+        "rfc6962_leaf_hash": "cb7c7922fe7060cbde452d95e60844c10fcac19993d2de1d586ecf4b53ec25c4",
+        "sha256_file": "370048176c509c205d0072b9a190f1adbdcd9ef06d71afedfb088c8239b34ef0"
+      },
+      {
+        "path": "data/bss_telemetry_input.json",
+        "rfc6962_leaf_hash": "66190c2f4ba1302d26bc6e482c48bdeb1cfad01942477df149acdd77efe865e7",
+        "sha256_file": "324fdd56606fa55679baa95eacce058b9430ca422e6f8b07e64e048cd43eb02e"
+      },
+      {
+        "path": "data/roaming_pci_sbom_input.json",
+        "rfc6962_leaf_hash": "7dc69c2830aac3b9efe1d304d2e807ae69197d9d21d290fa74438cc4ebe2d23f",
+        "sha256_file": "8f2c2d628f074ca49439cc562cbf0df832517d8790679a586ef67850544ac7f0"
+      },
+      {
+        "path": "data/s1979_six_domains_manifest.json",
+        "rfc6962_leaf_hash": "71e5f201ff6f2d33c6e51a71af48456b85c167fe838a52f439703f9177f03a18",
+        "sha256_file": "0da61857e7142460275c173e39e62a92813afda1ebead546b4961ac1d7acdd4c"
+      },
+      {
+        "path": "data/stir_shaken_and_li_warrants.json",
+        "rfc6962_leaf_hash": "9decd0724d227e8e52349105c41f58fbaf8fa62a32415a0f021c3a4d60bae3b1",
+        "sha256_file": "062a2b6138444c0558692df4959b84a32773a56e89a355ea056f9ab8b3f0eb1c"
+      },
+      {
+        "path": "manifests/cnf_upf_numa_sriov_mano.yaml",
+        "rfc6962_leaf_hash": "ca837369f34dbbd7eddbf592da630fe6063051674950ecbcaf2e721469a9767c",
+        "sha256_file": "729955e6ed9bc1667804b362290f7ab587d77cee5bad294bc657f51cb0b2128c"
+      },
+      {
+        "path": "output/arc_ops_sec/arc_ops_sec_full_audit_certificate.json",
+        "rfc6962_leaf_hash": "2e6e16dbaaaaa1804a089d9800a4c6c84c369bfcbae5ee7dd1e04718a62b3c36",
+        "sha256_file": "dc33198014165b3cbb8cdafd320b85789c7b23c95007a299403ef37ac92ff8a6"
+      },
+      {
+        "path": "output/credit_note_ubl21.xml",
+        "rfc6962_leaf_hash": "18393b9a8ce02d342ac58a89530cf4a478bf5106ba7b57b95bddca380b3ce386",
+        "sha256_file": "4067c7beb939070a1d19e02514410c7baee26bbf97c3cbb2f37c3f55b59e7394"
+      },
+      {
+        "path": "output/fin02_fin03/fin02_fin03_wholesale_ip_certificate.json",
+        "rfc6962_leaf_hash": "b6e9c3a91b89325b84bddb2e2c817664a313d88e2ae6df78712112d29186d0e7",
+        "sha256_file": "b8f856e5984dd957cb3cd1b53b9234048caacf040f51f4aabd62899a95855b7d"
+      },
+      {
+        "path": "output/jurisdictions/mexico_cfdi40_egreso_sla.xml",
+        "rfc6962_leaf_hash": "d25ff7a81394f4e0712f06d34989e8ad704dda8404d364018a3abee647a33c46",
+        "sha256_file": "4e83225860546529faa7a9cbb14917563a987ccac0b18268165cca68bc7f4de5"
+      },
+      {
+        "path": "output/jurisdictions/multi_jurisdiction_gov_fin_audit.json",
+        "rfc6962_leaf_hash": "47131942670e6329c3e1c29b460d98a1c120feb59efea724ead7f9e2747e8e02",
+        "sha256_file": "4d8b7391ef5b68ae2182214cef9defe5a5003a40edef9638efb8502d8f734c2d"
+      },
+      {
+        "path": "output/ra_sla_audit_certificate.json",
+        "rfc6962_leaf_hash": "eb3a2663445c6e25f51537e9c113ce1ce3f82b63e48be95d2fb05c095a8ffaaa",
+        "sha256_file": "f1035c73712de0bce1b3e328690d1944068d9169813c7fb100af4fb3b02c31b2"
+      },
+      {
+        "path": "output/six_domains_s1979/s1979_six_domains_audit_certificate.json",
+        "rfc6962_leaf_hash": "ddbe556e2bf5e32a6f393b0e46a28375124ba76d04359273adff20b004115eea",
+        "sha256_file": "c53192e3c65f3cbd6eee87eff6831e27e7c56271b9c26858373fa3d35d8c7c87"
+      },
+      {
+        "path": "output/stir_li_forensics/stir_shaken_and_etsi_li_audit_certificate.json",
+        "rfc6962_leaf_hash": "b6b35bffdb6c9c70a93ef2fa2ba0b594b4623e44fbe924c6242c9266724661e5",
+        "sha256_file": "e11a89341f52f9bf382852958de4c41b49aa861a99b9d0ca838409bca3fbcb2e"
+      },
+      {
+        "path": "sbom-cyclonedx.json",
+        "rfc6962_leaf_hash": "dafc28aa4f9b840e80568433daa21f01c9ac4614d02845179268871e16be0802",
+        "sha256_file": "c4165d08d99d65d47ad16b0d06820e783b24986670e7793a838e8a7c1b2d4e40"
+      },
+      {
+        "path": "src/gitops_netconf_sec_auditor.py",
+        "rfc6962_leaf_hash": "19d1dd8b783050049c4dd50d227cca836b9574964c3c0cd35c21e83fc82de132",
+        "sha256_file": "888d0957797ed18de36de25d63a51c6219385b1aca6b57ad272b63c7dc2450f9"
+      },
+      {
+        "path": "src/multi_jurisdiction_tax_gov_engine.py",
+        "rfc6962_leaf_hash": "da4a49dde3a656e0c3bc11c2ce53d7e7d908c390f046c01b2d2bac0ac6fba275",
+        "sha256_file": "4aab7cf47ce2a009fda83c0326e519de5da76d73bb358ef8f0133e0f6105d161"
+      },
+      {
+        "path": "src/roaming_sbom_frand_engine.py",
+        "rfc6962_leaf_hash": "7ecd0b58022b37571ff75d6953459d9297c7691fc253c2bc07b415df9e2ebb3e",
+        "sha256_file": "3a8753b92c350393cda9184960ca62fda92fdff160293b2ef1fdab6d64cf2ade"
+      },
+      {
+        "path": "src/s1979_deterministic_sealer.py",
+        "rfc6962_leaf_hash": "f013bc89f359ff264949d1a5a19340f6c2001f7d895a114da627f37d0a6f9fe4",
+        "sha256_file": "e30e3f367aebccefbcf8f7c50667ad713fbe9d5bd92bd2abb45181a3256a11f9"
+      },
+      {
+        "path": "src/s1979_six_domains_master_engine.py",
+        "rfc6962_leaf_hash": "ba72001e7553163f498bceaf6f2b2d5f89d280ab327cf007b03a6e55ef689abf",
+        "sha256_file": "ccf4415e3d1711477b4f75e430fcf4a869f81eb0390f7f9b553a7b649bc1aa31"
+      },
+      {
+        "path": "src/sla_ra_engine.py",
+        "rfc6962_leaf_hash": "beab6458fe542b7767e06ae1eb1bb9bc05b3b2de59a0e35668aa53f1044695a5",
+        "sha256_file": "d0dbbbc1730a0764f81bb0312a51e165ab7ca245d9acc87d50ff696e50a28b9b"
+      },
+      {
+        "path": "src/stir_shaken_etsy_li_engine.py",
+        "rfc6962_leaf_hash": "0b44626a89934cf7fde991183f7392c3b27b42256a6f09282f42a0e5ae83ae2a",
+        "sha256_file": "a6a728156df550bb6bebf33cc6f17ff7df57736cc84f20671c446f8cf2a6b27f"
+      }
+    ],
+    "MerkleRootSHA256": "1e962ad463e0634268747bd92c5b2b7f5c589f309549b7765f8917b79ccefaf5",
+    "PostQuantumHybridEnvelopeSHA3_512": "a2731c0827d7149332912bdc0ccb1e6ff13a78d77c11424bb12d6807c4d9f109ab132f5b4743fd8f80c403c96bb9de98606eff3f7608cde11f264cfe1af2e21c",
+    "TotalSealedFiles": 26
+  },
+  "ProtectedDomains": [
+    "standard1979.com",
+    "AuraIntelCore.com",
+    "AuraTetrax.com",
+    "AuraIntelStudios3D.com",
+    "fourphonix.com",
+    "prophonix.com"
+  ],
+  "ShamirQuorumGF256": {
+    "CustodianShares": [
+      {
+        "custodian": "CUSTODIAN-1: Standard 1979 Holdings, LLC (IP Treasury Vault - standard1979.com)",
+        "share_hex_gf256": "f4de6327a5bd6f96e4291710b260f7d9a564ea354beb2ac98900500f53140963",
+        "share_index_x": 1
+      },
+      {
+        "custodian": "CUSTODIAN-2: Aura Technologies Operating, LLC (SSO/LLM Lead - AuraIntelCore.com)",
+        "share_hex_gf256": "5c3d27fa4b688c1b587f0ee9a1c8ec6cc7918910d81e1334c89467aa619e4470",
+        "share_index_x": 2
+      },
+      {
+        "custodian": "CUSTODIAN-3: Aura Technologies Operating, LLC (PaaS/3D Lead - AuraTetrax.com / AuraIntelStudios3D.com)",
+        "share_hex_gf256": "2f2cc13066189de9e8c1dcde8af3fe450f8fccbe9b693331757d40a65e94ebfb",
+        "share_index_x": 3
+      },
+      {
+        "custodian": "CUSTODIAN-4: Phonix Communications Operating, LLC (UCaaS Host - fourphonix.com)",
+        "share_hex_gf256": "de5d15954793ecac8b5683164adf43c6a6c6658bf02847c295f534b8a163d3a1",
+        "share_index_x": 4
+      },
+      {
+        "custodian": "CUSTODIAN-5: Phonix Communications Operating, LLC (Carrier Core - prophonix.com)",
+        "share_hex_gf256": "ad4cf35f6ae3fd5e3be8512161e451ef6ed82025b35f67c7281c13b49e697c2a",
+        "share_index_x": 5
+      }
+    ],
+    "QuorumVerificationTest": "PASS_EXACT_MATCH_SHARES_1_3_5",
+    "Scheme": "3-of-5 Threshold over GF(2^8) (Irreducible Polynomial 0x11B)"
+  }
+}
