@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProPhonix | Wholesale Carrier SIP Trunking, BGP Anycast SBC & High-CPS Interconnect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Rajdhani:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --noc-bg: #020813;
+      --noc-panel: #071224;
+      --optic-cyan: #00e5ff;
+      --carrier-amber: #ffab00;
+      --signal-green: #00e676;
+      --noc-border: #132a4a;
+      --text-white: #f0f6fc;
+      --text-slate: #8b9eb7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--noc-bg);
+      color: var(--text-white);
+      font-family: 'Space Grotesk', sans-serif;
+      background-image: radial-gradient(rgba(0, 229, 255, 0.07) 1px, transparent 0);
+      background-size: 28px 28px;
+    }
+
+    .omni-bar {
+      background: #01040a;
+      border-bottom: 1px solid var(--noc-border);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      padding: 0.55rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .omni-bar a {
+      color: var(--text-slate);
+      text-decoration: none;
+      padding: 0.2rem 0.55rem;
+      border: 1px solid var(--noc-border);
+      margin-left: 0.3rem;
+    }
+
+    .omni-bar a.active {
+      background: var(--optic-cyan);
+      color: #01040a;
+      border-color: var(--optic-cyan);
+      font-weight: 700;
+    }
+
+    .noc-container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 2rem 1.75rem;
+    }
+
+    .noc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--noc-border);
+      padding-bottom: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .noc-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Mapa de Radar Global BGP Anycast & Telemetría Carrier */
+    .peering-console {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .bgp-map-box {
+      background: var(--noc-panel);
+      border: 1px solid var(--noc-border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    #bgp-canvas {
+      width: 100%;
+      height: 310px;
+      background: #030b18;
+      border: 1px solid #0e223d;
+      display: block;
+    }
+
+    .cps-telemetry {
+      background: var(--noc-panel);
+      border: 1px solid var(--noc-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      font-family: 'IBM Plex Mono', monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .noc-kpi {
+      background: #030b18;
+      border-left: 3px solid var(--optic-cyan);
+      padding: 0.85rem 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Tabla / Tarjetas de Interconexión Mayorista (4 SKUs PPHX-* en Stripe) */
+    .carrier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .carrier-card {
+      background: var(--noc-panel);
+      border: 1px solid var(--noc-border);
+      border-top: 3px solid var(--optic-cyan);
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .carrier-card.tier1 {
+      border-top-color: var(--carrier-amber);
+      box-shadow: 0 0 30px rgba(255, 171, 0, 0.08);
+    }
+
+    .carrier-price {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: clamp(1.6rem, 2.1vw, 2rem);
+      font-weight: 700;
+      color: var(--optic-cyan);
+      white-space: nowrap;
+      margin: 0.9rem 0;
+    }
+
+    .carrier-price span {
+      font-size: 0.8rem;
+      color: var(--text-slate);
+    }
+
+    .btn-carrier {
+      display: block;
+      text-align: center;
+      background: var(--optic-cyan);
+      color: #01040a;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 0.8rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin-top: 1.2rem;
+    }
+
+    @media (max-width: 980px) {
+      .peering-console { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="omni-bar">
+    <div>
+      <strong>PROPHONIX WHOLESALE CARRIER NOC</strong> • BGP ANYCAST SBC PEERING & HIGH-CPS SIP INTERCONNECT
+    </div>
+    <div>
+      <a href="https://standard1979.com">8091: Standard1979</a>
+      <a href="https://auraintelcore.com">8090: AuraIntelCore</a>
+      <a href="https://auratetrax.com">8092: AuraTetrax</a>
+      <a href="https://auraintelstudios3d.com">8093: Studios3D</a>
+      <a href="https://fourphonix.com">8094: FourPhonix</a>
+      <a href="https://prophonix.com" class="active">8095: ProPhonix</a>
+    </div>
+  </div>
+
+  <div class="noc-container">
+    <header class="noc-header">
+      <div>
+        <div class="noc-title">PROPHONIX // CARRIER INTERCONNECT & BGP ANYCAST</div>
+        <div style="font-family:'IBM Plex Mono', monospace; font-size:0.76rem; color:var(--text-slate);">
+          TIER-1 WHOLESALE SIP TRUNKING • TCPA/FTSA SAFE DIALING • HOLDING ROYALTY: 10.0% IRC § 482
+        </div>
+      </div>
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--signal-green);">
+        ● BGP AS-PATH: OPTIMAL (99.999% UPTIME)
+      </div>
+    </header>
+
+    <section class="peering-console">
+      <div class="bgp-map-box">
+        <div style="display:flex; justify-content:space-between; font-family:'IBM Plex Mono', monospace; font-size:0.75rem; color:var(--optic-cyan); margin-bottom:0.75rem;">
+          <span>GLOBAL SBC ANYCAST PEERING MESH (MIAMI • ASHVA • FRANKFURT • TOKYO)</span>
+          <span>RTT < 14.2 ms</span>
+        </div>
+        <canvas id="bgp-canvas"></canvas>
+      </div>
+
+      <div class="cps-telemetry">
+        <div>
+          <div style="font-size:0.8rem; color:var(--carrier-amber); margin-bottom:0.8rem; font-weight:700;">
+            // TELEMETRÍA DE CAUDAL CARRIER EN VIVO
+          </div>
+          <div class="noc-kpi">
+            <div style="font-size:0.72rem; color:var(--text-slate);">CAUDAL DE SEÑALIZACIÓN SIP (CPS):</div>
+            <div style="font-size:1.45rem; font-weight:700; color:var(--signal-green);" id="live-cps">142.8 CPS</div>
+          </div>
+          <div class="noc-kpi" style="border-left-color:var(--carrier-amber);">
+            <div style="font-size:0.72rem; color:var(--text-slate);">FILTRADO NORMATIVO TCPA / FTSA (FLORIDA):</div>
+            <div style="font-size:1.1rem; font-weight:700; color:var(--carrier-amber);">DNC & LITIGATOR SCRUB ACTIVE</div>
+          </div>
+          <div class="noc-kpi">
+            <div style="font-size:0.72rem; color:var(--text-slate);">CÓDIGO FISCAL STRIPE:</div>
+            <div style="font-size:0.95rem; font-weight:700;">txcd_20030000 / txcd_10103001</div>
+          </div>
+        </div>
+        <a href="#carrier-skus" class="btn-carrier">Aprovisionar Interconexión Carrier ↓</a>
+      </div>
+    </section>
+
+    <section id="carrier-skus">
+      <h2 style="font-family:'Rajdhani', sans-serif; font-size:1.75rem; margin-bottom:1.25rem; text-transform:uppercase;">
+        Catálogo Mayorista ProPhonix (4 SKUs Activos en Stripe)
+      </h2>
+
+      <div class="carrier-grid">
+        <div class="carrier-card">
+          <div>
+            <div style="font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--signal-green);">SKU: PPHX-SIP-TRUNK • txcd_20030000</div>
+            <h3 style="margin-top:0.35rem;">Wholesale Carrier SIP Trunk</h3>
+            <div class="carrier-price">$199.00 <span>USD / MES</span></div>
+            <p style="font-size:0.86rem; color:var(--text-slate);">
+              Troncal SIP mayorista de baja latencia con rutas directas Tier-1, soporte G.711/Opus y señalización TLS/SRTP.
+            </p>
+          </div>
+          <a href="https://buy.stripe.com/3cI7sLfq20LS3Mb5aWcjS1c" target="_blank" rel="noopener noreferrer" class="btn-carrier">Activar SIP Trunk</a>
+        </div>
+
+        <div class="carrier-card">
+          <div>
+            <div style="font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--optic-cyan);">SKU: PPHX-TCPA-SAFE • txcd_10103001</div>
+            <h3 style="margin-top:0.35rem;">Carrier Compliance Dialer TCPA/FTSA</h3>
+            <div class="carrier-price">$799.00 <span>USD / MES</span></div>
+            <p style="font-size:0.86rem; color:var(--text-slate);">
+              Motor de marcación con verificación automática de horarios legales, listas DNC y cumplimiento estricto de la ley FTSA de Florida.
+            </p>
+          </div>
+          <a href="https://buy.stripe.com/4gM28rb9M66cgyXgTEcjS1b" target="_blank" rel="noopener noreferrer" class="btn-carrier">Desplegar TCPA/FTSA Dialer</a>
+        </div>
+
+        <div class="carrier-card">
+          <div>
+            <div style="font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--signal-green);">SKU: PPHX-CARRIER-CPS • txcd_20030000</div>
+            <h3 style="margin-top:0.35rem;">High-CPS Interconnect 100+</h3>
+            <div class="carrier-price">$2,450.00 <span>USD / MES</span></div>
+            <p style="font-size:0.86rem; color:var(--text-slate);">
+              Puerto de interconexión dedicado para cargas superiores a 100 llamadas por segundo (100+ CPS) con prioridad de cola en SBC.
+            </p>
+          </div>
+          <a href="https://buy.stripe.com/cNi6oH3HkdyEdmL9rccjS1a" target="_blank" rel="noopener noreferrer" class="btn-carrier">Contratar Puerto 100+ CPS</a>
+        </div>
+
+        <div class="carrier-card tier1">
+          <div>
+            <div style="font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--carrier-amber);">SKU: PPHX-SBC-PEER • TIER-1 ANYCAST</div>
+            <h3 style="margin-top:0.35rem;">Global Carrier SBC Peering BGP Anycast</h3>
+            <div class="carrier-price" style="color:var(--carrier-amber);">$4,900.00 <span>USD / MES</span></div>
+            <p style="font-size:0.86rem; color:var(--text-slate);">
+              Peering directo de Session Border Controller (SBC) con enrutamiento BGP Anycast multi-continente y conmutación sub-segundo.
+            </p>
+          </div>
+          <a href="https://buy.stripe.com/00wbJ191EdyEbeDfPAcjS19" target="_blank" rel="noopener noreferrer" class="btn-carrier" style="background:var(--carrier-amber);">Establecer Peering BGP</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Simulador de Rutas Globales BGP Anycast entre Nodos POP (Miami, Ashburn, Frankfurt, Tokyo, São Paulo)
+    const c = document.getElementById('bgp-canvas');
+    const ctx = c.getContext('2d');
+    let cw, ch, tick = 0;
+
+    function resizeBgp() {
+      cw = c.width = c.clientWidth;
+      ch = c.height = c.clientHeight;
+    }
+    window.addEventListener('resize', resizeBgp);
+    resizeBgp();
+
+    const pops = [
+      { name: "MIA-POP1 (FL)", x: 0.24, y: 0.52 },
+      { name: "IAD-CORE", x: 0.27, y: 0.34 },
+      { name: "GRU-SOUTH", x: 0.36, y: 0.78 },
+      { name: "FRA-EU1", x: 0.54, y: 0.30 },
+      { name: "NRT-APAC", x: 0.84, y: 0.42 }
+    ];
+
+    function drawBgp() {
+      ctx.fillStyle = '#030b18';
+      ctx.fillRect(0, 0, cw, ch);
+
+      // Arcos de fibra óptica intercontinental
+      for (let i = 0; i < pops.length; i++) {
+        for (let j = i + 1; j < pops.length; j++) {
+          const p1 = { x: pops[i].x * cw, y: pops[i].y * ch };
+          const p2 = { x: pops[j].x * cw, y: pops[j].y * ch };
+
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          ctx.quadraticCurveTo((p1.x + p2.x) / 2, Math.min(p1.y, p2.y) - 38, p2.x, p2.y);
+          ctx.strokeStyle = 'rgba(0, 229, 255, 0.26)';
+          ctx.lineWidth = 1.2;
+          ctx.stroke();
+
+          // Paquete SIP viajando por la ruta
+          const t = ((tick * 0.012) + (i * 0.2)) % 1;
+          const cx = (1 - t) * (1 - t) * p1.x + 2 * (1 - t) * t * ((p1.x + p2.x) / 2) + t * t * p2.x;
+          const cy = (1 - t) * (1 - t) * p1.y + 2 * (1 - t) * t * (Math.min(p1.y, p2.y) - 38) + t * t * p2.y;
+          ctx.beginPath();
+          ctx.arc(cx, cy, 3, 0, Math.PI * 2);
+          ctx.fillStyle = '#ffab00';
+          ctx.fill();
+        }
+      }
+
+      // Dibujar Nodos POP
+      pops.forEach(p => {
+        const px = p.x * cw, py = p.y * ch;
+        ctx.beginPath();
+        ctx.arc(px, py, 5, 0, Math.PI * 2);
+        ctx.fillStyle = '#00e676';
+        ctx.fill();
+        ctx.fillStyle = '#f0f6fc';
+        ctx.font = '11px IBM Plex Mono';
+        ctx.fillText(p.name, px + 8, py + 4);
+      });
+
+      tick++;
+      if (tick % 35 === 0) {
+        document.getElementById('live-cps').textContent = `${(115 + Math.random() * 65).toFixed(1)} CPS`;
+      }
+      requestAnimationFrame(drawBgp);
+    }
+    drawBgp();
+  </script>
+</body>
+</html>
